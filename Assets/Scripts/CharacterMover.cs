@@ -19,7 +19,6 @@ public class CharacterMover : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponentInParent<Rigidbody2D>();
-        animator = GetComponentInParent<Animator>();
     }
 
     public void Move(Vector2 movementVector)
@@ -64,7 +63,6 @@ public class CharacterMover : MonoBehaviour
     private void FixedUpdate()
     {
         rb2d.velocity = movement * Time.deltaTime;
-        animator.SetBool("isMoving", isMoving);
         //Debug.Log("R" + rb2d.velocity);
     }
 }

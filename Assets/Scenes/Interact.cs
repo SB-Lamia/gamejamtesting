@@ -15,7 +15,10 @@ public class Interact : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D NPC)
     {
-        TextDialog.SetActive(true);
+        if (NPC.CompareTag("Player"))
+        {
+            TextDialog.SetActive(true);
+        }
     }
 
     void OnTriggerExit2D(Collider2D NPC)
